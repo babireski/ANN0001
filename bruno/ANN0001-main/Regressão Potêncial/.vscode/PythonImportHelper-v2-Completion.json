@@ -1,0 +1,73 @@
+[
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "calc_coeffs",
+        "kind": 2,
+        "importPath": "Regressão Potêncial",
+        "description": "Regressão Potêncial",
+        "peekOfCode": "def calc_coeffs(X, Y):\n    # (1) Cria a matriz do lado esquerdo da equação:\n    X_matrix = []\n    for i in range(2):\n        row = []\n        for j in range(2):\n            sum = 0\n            for xi in X: \n                sum += xi ** (i + j)\n            row.append(sum)",
+        "detail": "Regressão Potêncial",
+        "documentation": {}
+    },
+    {
+        "label": "build_poly",
+        "kind": 2,
+        "importPath": "Regressão Potêncial",
+        "description": "Regressão Potêncial",
+        "peekOfCode": "def build_poly(coeffs):\n    def func(x):\n        result = 0\n        for i, ci in enumerate(coeffs):\n            result += ci*(x**i)\n        return result\n    return func\ndef calc_pot_coeffs(X, Y):\n    const_Y= min(Y)\n    if(const_Y <= 0):",
+        "detail": "Regressão Potêncial",
+        "documentation": {}
+    },
+    {
+        "label": "calc_pot_coeffs",
+        "kind": 2,
+        "importPath": "Regressão Potêncial",
+        "description": "Regressão Potêncial",
+        "peekOfCode": "def calc_pot_coeffs(X, Y):\n    const_Y= min(Y)\n    if(const_Y <= 0):\n        const_Y = abs(const_Y) + 1\n    else:\n        const_Y = 0\n    const_X = min(X)\n    if(const_X <= 0):\n        const_X = abs(const_X) + 1\n    else:",
+        "detail": "Regressão Potêncial",
+        "documentation": {}
+    },
+    {
+        "label": "build_pot",
+        "kind": 2,
+        "importPath": "Regressão Potêncial",
+        "description": "Regressão Potêncial",
+        "peekOfCode": "def build_pot(coeffs):\n    def f(x):\n        return coeffs['a']*(x + coeffs['k'])**(coeffs['b']) - coeffs['c']\n    return f\nif __name__ == '__main__':\n    # Exemplo 01:\n    X = [0.5126, 0.573, 0.6654, 0.7057, 0.7871, 0.839, 0.8638, 0.9288, 0.9927, 1.0747, 1.1316, 1.156, 1.2296, 1.2843, 1.3793, 1.4231, 1.46, 1.563, 1.5992, 1.6487, 1.7329, 1.7565, 1.8323, 1.8917, 1.9537, 2.0237, 2.0884, 2.1108, 2.1873, 2.267, 2.3021, 2.3839, 2.4503, 2.5089, 2.5705, 2.6377, 2.6636, 2.7247, 2.7873, 2.8298, 2.9127, 2.9983]\n    Y = [0.2227, 1.1283, 0.1645, 0.0203, 0.7443, 0.8442, 0.6032, 0.9433, 1.2406, 3.8341, 2.0135, 2.8183, 3.2389, 3.341, 4.6893, 5.6199, 5.4493, 7.2853, 8.3757, 8.8673, 10.8298, 10.9226, 13.956, 15.4451, 17.0213, 19.808, 22.6852, 23.4231, 27.0152, 30.3488, 32.3376, 36.9758, 41.4058, 44.8341, 49.4973, 54.9113, 56.9, 61.2, 67.2643, 71.216, 78.7952, 89.2234]\n    values = [0.6996, 0.8847, 2.1356, 2.7445, 2.9708]\n    coeffs = calc_pot_coeffs(X, Y)     ",
+        "detail": "Regressão Potêncial",
+        "documentation": {}
+    }
+]
